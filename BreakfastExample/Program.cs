@@ -7,7 +7,8 @@ namespace BreakfastExample
     {
         static async Task Main(string[] args)
         {
-            Bacon bacon = await Bacon.FryBaconAsync(3);
+            Task<Bacon> baconTask = Bacon.FryBaconAsync(3);
+            Bacon bacon = await baconTask;
             Console.WriteLine("bacon is ready");
 
         }

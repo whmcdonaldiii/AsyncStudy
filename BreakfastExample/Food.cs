@@ -11,15 +11,17 @@ namespace BreakfastExample
         {
             Bacon b = new();
             b.slices = slices;
+            int delayTime = 1000 * slices;
+
             Console.WriteLine($"putting {slices} slices of bacon in the pan");
             Console.WriteLine("cooking first side of bacon...");
-            Task.Delay(3000).Wait();
+            await Task.Delay(delayTime);
             for (int slice = 0; slice < slices; slice++)
             {
                 Console.WriteLine("flipping a slice of bacon");
             }
             Console.WriteLine("cooking the second side of bacon...");
-            Task.Delay(3000).Wait();
+            await Task.Delay(delayTime);
             Console.WriteLine("Put bacon on plate");
 
             return b;
